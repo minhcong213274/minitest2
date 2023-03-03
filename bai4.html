@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai4</title>
+</head>
+<body>
+<button type="button" onclick="addlength()">Add length</button>
+<button type="button" onclick="addarray()">Add array</button>
+<button type="button" onclick="total()">Total</button>
+<button type="button" onclick="number()">Sum number</button>
+<p id="result"></p>
+<script>
+  var a = [];
+  function addlength() {
+      var num = parseInt(prompt(""));
+      a.length = num;
+  }
+  function addarray() {
+      for (var i = 0; i < a.length; i++) {
+          a[i] = parseInt(prompt(""));
+      }
+      document.getElementById("result").innerHTML=("mang gom co " + a + "<br>")
+  }
+function total(){
+    var x = 0;
+    sum = 0;
+    for (i=0;i<a.length;i++){
+        if(a[i]%2 == 0){
+            sum += a[i];
+            x++;
+        }
+    }document.getElementById("result").innerHTML= ( "co " + x +" so chan " + "va tong cac so chan la:"+ sum + "<br>")
+}
+  function number(){
+      c = 0;
+      for (i=0;i<a.length;i++){
+          d=true;
+          if(a[i] < 2){
+              d = false;
+          }
+          else {
+              for (j=2;j<a[i]-1;j++){
+                  if(a[i]%j == 0){
+                      d = false;
+                      break;
+                  }
+              }
+          }
+          if(d == true){
+              c += a[i];
+          }
+      }document.getElementById("result").innerHTML = "tong cac so nguyen to = " + c;
+  }
+</script>
+</body>
+</html>
